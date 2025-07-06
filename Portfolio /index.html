@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio</title>
+    <title>Your Name | Portfolio</title>
+    <meta name="description" content="Portfolio of Your Name, a passionate web developer crafting unique web experiences.">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Hero Section -->
     <header class="hero" id="home">
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
+                <li><a href="#home" aria-current="page">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -24,67 +29,76 @@
         </div>
     </header>
 
-    <!-- About Me Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            Hi! I'm Your Name, a web developer with a love for building beautiful and functional websites. I enjoy solving problems and learning new technologies.
-        </p>
-    </section>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Me Section -->
+        <section id="about" class="about">
+            <h2>About Me</h2>
+            <p>
+                Hi! I'm <strong>Your Name</strong>, a web developer with a love for building beautiful and functional websites. I enjoy solving problems and learning new technologies.
+            </p>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <article class="project-card">
-                <h3>Project One</h3>
-                <p>Short description of your project goes here.</p>
-                <a href="#" target="_blank">View Project</a>
-            </article>
-            <article class="project-card">
-                <h3>Project Two</h3>
-                <p>Short description of your project goes here.</p>
-                <a href="#" target="_blank">View Project</a>
-            </article>
-            <article class="project-card">
-                <h3>Project Three</h3>
-                <p>Short description of your project goes here.</p>
-                <a href="#" target="_blank">View Project</a>
-            </article>
-            <!-- Add more project cards as needed -->
-        </div>
-    </section>
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>Project One</h3>
+                    <p>Short description of your project goes here.</p>
+                    <a href="https://yourproject1.link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </article>
+                <article class="project-card">
+                    <h3>Project Two</h3>
+                    <p>Short description of your project goes here.</p>
+                    <a href="https://yourproject2.link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </article>
+                <article class="project-card">
+                    <h3>Project Three</h3>
+                    <p>Short description of your project goes here.</p>
+                    <a href="https://yourproject3.link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </article>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <div>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2>Contact</h2>
+            <form id="contact-form" action="#" method="post" novalidate>
+                <div>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required autocomplete="name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
         <div class="social-links">
-            <a href="#" aria-label="GitHub"><img src="github.svg" alt="GitHub"></a>
-            <a href="#" aria-label="LinkedIn"><img src="linkedin.svg" alt="LinkedIn"></a>
-            <a href="#" aria-label="Twitter"><img src="twitter.svg" alt="Twitter"></a>
+            <a href="https://github.com/yourusername" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                <img src="github.svg" alt="GitHub logo" width="24" height="24">
+            </a>
+            <a href="https://linkedin.com/in/yourusername" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <img src="linkedin.svg" alt="LinkedIn logo" width="24" height="24">
+            </a>
+            <a href="https://twitter.com/yourusername" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+                <img src="twitter.svg" alt="Twitter logo" width="24" height="24">
+            </a>
         </div>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
