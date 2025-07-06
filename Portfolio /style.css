@@ -1,0 +1,198 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary: #4f8cff;
+    --secondary: #232946;
+    --accent: #eebbc3;
+    --bg: #f4f4f6;
+    --text: #232946;
+    --white: #fff;
+    --shadow: 0 4px 24px rgba(35, 41, 70, 0.08);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 80vh;
+    background: linear-gradient(120deg, var(--primary) 60%, var(--accent) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 4rem 1rem 2rem 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: var(--secondary);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--accent);
+    color: var(--secondary);
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Section Styles */
+section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem 1rem;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-align: center;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+}
+
+/* Projects Section */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.project-card {
+    background: var(--bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(35, 41, 70, 0.16);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--secondary);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.project-card p {
+    flex: 1;
+    margin-bottom: 1rem;
+}
+
+.project-card .btn {
+    margin-top: auto;
+}
+
+/* Contact Section */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--primary);
+    border-color: var(--primary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    color: #888;
+    background: transparent;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    section {
+        max-width: 98vw;
+        padding: 1.5rem 0.5rem;
+    }
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    section h2 {
+        font-size: 1.5rem;
+    }
+    .project-card {
+        max-width: 100%;
+        padding: 1rem;
+    }
+}
