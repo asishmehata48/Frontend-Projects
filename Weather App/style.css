@@ -1,0 +1,116 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(
+    to right,
+    #3E2F28 ,   /* left: light blue */
+    #FFF8F0,     /* center: strong blue */
+    #FF6B35     /* right: light blue */
+  );
+  color: #313131;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background: linear-gradient(
+    to right,
+    rgba(30, 30, 30, 0.8),      /* left: light dark */
+    rgba(10, 10, 10, 1),        /* center: heavy dark */
+    rgba(30, 30, 30, 0.8)       /* right: light dark */
+  );
+  color: #f5f5f5;
+}
+
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 15px 15px;
+  gap: 10px;
+}
+
+header input {
+  width: 100%;
+  max-width: 250px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.2s ease-out;
+}
+
+header input:focus {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+header button {
+  padding: 10px 12px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: 0.2s;
+}
+
+header button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.location .city {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.location .date {
+  font-size: 16px;
+}
+
+.current .temp {
+  font-size: 72px;
+  font-weight: 800;
+  margin: 20px 0px;
+}
+
+.current .temp span {
+  font-weight: 500;
+}
+
+.current .weather {
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.current .hi-low {
+  font-size: 20px;
+  font-weight: 500;
+}
