@@ -1,21 +1,23 @@
-// Create Template Variables
-const INTERVAL_MS = 1000 / 60;
+// Constants
+const INTERVAL_MS = 10; // Smooth update every 10ms
 let timerID;
 let lastTimerStartTime = 0;
 let millisElapsedBeforeLastStart = 0;
 
-// Get Our Data From The DOM
+// DOM Elements
 const timer = document.getElementById("timer");
 const startButton = document.getElementById("start-button");
 const stopButton = document.getElementById("stop-button");
 const resetButton = document.getElementById("reset-button");
 
-// USE EVENTS
-startButton.addEventListener("click", startTimer);
-stopButton.addEventListener("click", stopTimer);
-resetButton.addEventListener("click", resetTimers);
+// Event Listeners (after DOM is loaded)
+document.addEventListener("DOMContentLoaded", () => {
+  startButton.addEventListener("click", startTimer);
+  stopButton.addEventListener("click", stopTimer);
+  resetButton.addEventListener("click", resetTimer);
+});
 
-// 1. startTimer
+// Start Timer
 function startTimer() {
   startButton.disabled = true;
   stopButton.disabled = false;
@@ -25,7 +27,7 @@ function startTimer() {
   timerID = setInterval(updateTimer, INTERVAL_MS);
 }
 
-// 2. stopTimer
+// Stop Timer
 function stopTimer() {
   startButton.disabled = false;
   stopButton.disabled = true;
@@ -35,32 +37,36 @@ function stopTimer() {
   clearInterval(timerID);
 }
 
-// 3. resetTimer
-function resetTimers() {
+// Reset Timer
+function resetTimer() {
   resetButton.disabled = true;
-  timer.textContent = "00:00:00";
+  startButton.disabled = false;
+  stopButton.disabled = true;
+
+  clearInterval(timerID);
+  timer.textContent = "00:00:000";
   millisElapsedBeforeLastStart = 0;
 }
 
-// 4. updateTimer
+// Update Timer Display
 function updateTimer() {
-  const milllisElapsed =
+  const millisElapsed =
     Date.now() - lastTimerStartTime + millisElapsedBeforeLastStart;
-  const secondsElapsed = milllisElapsed / 1000;
+  const secondsElapsed = millisElapsed / 1000;
   const minutesElapsed = secondsElapsed / 60;
 
-  const millisText = formateNumber(milllisElapsed % 1000, 3);
-  const secondsText = formateNumber(Math.floor(secondsElapsed) % 60, 2);
-  const minutesText = formateNumber(Math.floor(minutesElapsed), 2);
+  const millisText = formatNumber(millisElapsed % 1000, 3);
+  const secondsText = formatNumber(Math.floor(secondsElapsed) % 60, 2);
+  const minutesText = formatNumber(Math.floor(minutesElapsed), 2);
+
   timer.textContent = `${minutesText}:${secondsText}:${millisText}`;
 }
 
-// 5. formatNumber
-function formateNumber(number, desiredLength) {
-  const stringNumber = String(number);
+// Format Number with Leading Zeros
+function formatNumber(number, desiredLength) {
+  const stringNumber = String(Math.floor(number));
   if (stringNumber.length > desiredLength) {
     return stringNumber.slice(0, desiredLength);
   }
-
   return stringNumber.padStart(desiredLength, "0");
 }
