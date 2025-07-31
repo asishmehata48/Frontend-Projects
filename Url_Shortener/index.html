@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>URL Shortener - Day 106</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1>🔗 URL Shortener</h1>
+    <form id="shorten-form">
+      <input type="url" id="long-url" placeholder="Enter a long URL..." required />
+      <button type="submit">Shorten URL</button>
+    </form>
+
+    <div id="result" class="hidden">
+      <p>Your Short URL:</p>
+      <div class="result-box">
+        <input type="text" id="short-url" readonly />
+        <button id="copy-btn">📋 Copy</button>
+      </div>
+    </div>
+
+    <h2>📜 Previously Shortened URLs</h2>
+    <div class="table-wrapper">
+      <table id="url-list">
+        <thead>
+          <tr>
+            <th>Original URL</th>
+            <th>Short URL</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
