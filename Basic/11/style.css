@@ -1,0 +1,60 @@
+/* Reset and box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base font size for rem scaling */
+html {
+  font-size: 10px;
+}
+
+/* Fullscreen centered layout with dark background */
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #04131f;
+}
+
+/* Google "G" logo base circle with colored borders */
+.logo {
+  position: relative;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 50%;
+  border-left: 4rem solid #fbbc05;   /* Yellow */
+  border-right: 4rem solid #4385f6;  /* Blue */
+  border-top: 4rem solid #ea4335;    /* Red */
+  border-bottom: 4rem solid #34a853; /* Green */
+}
+
+/* Cutout part to make the 'G' shape */
+.logo::before {
+  content: "";
+  position: absolute;
+  top: -15rem;
+  right: -15rem;
+  border-top: 11rem solid transparent;
+  border-right: 11rem solid #04131f; /* matches background */
+  border-bottom: 11rem solid transparent;
+  border-left: 11rem solid transparent;
+  transform: rotate(90deg);
+}
+
+/* Horizontal blue bar inside the "G" */
+.logo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -4.5rem;
+  width: 11rem;
+  height: 4rem;
+  background: #4385f6;
+  transform: translate(-5px, -50%);
+  border-bottom-right-radius: 1.5rem;
+  border-top-right-radius: 0.5rem;
+}
