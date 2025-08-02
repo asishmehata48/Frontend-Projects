@@ -45,7 +45,7 @@ body {
   transform: rotate(90deg);
 }
 
-/* Horizontal blue bar inside the "G" */
+
 .logo::after {
   content: "";
   position: absolute;
